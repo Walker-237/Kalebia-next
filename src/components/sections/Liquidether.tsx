@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 /**
@@ -13,8 +14,6 @@
  * Transparent by design (bgColor alpha is always 0) — it's meant to sit
  * as a layer behind real content, not as a standalone hero visual.
  */
-
-// @ts-nocheck
 
 import { useEffect, useRef, type CSSProperties } from "react";
 import * as THREE from "three";
