@@ -103,9 +103,9 @@ export default function Blog() {
   const [featuredPost, ...rest] = POSTS;
 
   return (
-    <section className="bl-section">
+    <section id="blog" className="bl-section">
       <div ref={header.ref} className={`bl-header ${header.inView ? "is-in" : ""}`}>
-        <span className="bl-marker">05 — BLOG</span>
+        <span className="bl-marker">06 — BLOG</span>
         <h2 className="bl-heading">
           Blog <em>/</em> Insights
         </h2>

@@ -2,6 +2,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { EditorialIntro } from "@/components/sections/Editorialintro";
 import Expertise from "@/components/sections/Expertise";
+import Realisations from "@/components/sections/Realisations";
 import SocialPlatformsOrbit from "@/components/sections/Socialplatformsorbit";
 import Blog from "@/components/sections/Blog";
 import Formations from "@/components/sections/Formations";
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <EditorialIntro />
       <Expertise />
+      <Realisations />
       <SocialPlatformsOrbit />
       <Blog />
       <Formations />

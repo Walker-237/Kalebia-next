@@ -1,15 +1,15 @@
-const NAV_LINKS = [
-  "À propos",
-  "Expertise",
-  "Réalisations",
-  "Formations",
-  "Insights",
-  "Méthode",
+const NAV_LINKS: { label: string; href: string }[] = [
+  { label: "À propos", href: "#about" },
+  { label: "Expertise", href: "#expertise" },
+  { label: "Réalisations", href: "#realisations" },
+  { label: "Formations", href: "#formations" },
+  { label: "Insights", href: "#blog" },
+  { label: "Méthode", href: "#methode" },
 ];
 
-function NavLink({ label }: { label: string }) {
+function NavLink({ label, href }: { label: string; href: string }) {
   return (
-    <a href="#" className="group relative py-1 text-[13px] text-[#111114]/65">
+    <a href={href} className="group relative py-1 text-[13px] text-[#111114]/65">
       <span className="transition-colors duration-300 group-hover:text-[#111114]">
         {label}
       </span>
@@ -27,7 +27,7 @@ export function Nav() {
         </a>
         <nav className="hidden items-center gap-10 lg:flex">
           {NAV_LINKS.map((link) => (
-            <NavLink key={link} label={link} />
+            <NavLink key={link.href} label={link.label} href={link.href} />
           ))}
         </nav>
         <a

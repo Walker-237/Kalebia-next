@@ -73,7 +73,7 @@ export default function Methode() {
 
       <div className="met__inner">
         <div className="met__head">
-          <SectionMarker index="08" label="Méthode" />
+          <SectionMarker index="09" label="Méthode" />
           <h2 className="met__title">Comment je travaille, en quatre temps.</h2>
           <p className="met__sub">
             Un fil clair, du premier brief jusqu&rsquo;à l&rsquo;itération.

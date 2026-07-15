@@ -12,7 +12,7 @@ export default function Partenaires() {
     <section className="par" id="partenaires">
       <div className="par__inner">
         <div className="par__head">
-          <SectionMarker index="10" label="Partenaires" />
+          <SectionMarker index="11" label="Partenaires" />
           <h2 className="par__title">Ils m&rsquo;ont fait confiance</h2>
           <p className="par__sub">
             Entreprises, marques et partenaires avec lesquels j&rsquo;ai

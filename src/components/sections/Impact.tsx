@@ -57,7 +57,7 @@ export default function Impact() {
     <section className="impact" id="impact">
       <div className="impact__inner">
         <div className="impact__head">
-          <SectionMarker index="07" label="Impact" />
+          <SectionMarker index="08" label="Impact" />
           <h2 className="impact__title">Des chiffres, pas des promesses.</h2>
         </div>
 

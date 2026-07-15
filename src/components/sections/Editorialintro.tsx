@@ -12,7 +12,7 @@ const DECORATIVE_WORDS: GhostWord[] = [
 
 export function EditorialIntro() {
   return (
-    <section className="relative overflow-hidden py-32 lg:py-44">
+    <section id="about" className="relative overflow-hidden py-32 lg:py-44">
       <GhostType words={DECORATIVE_WORDS} parallaxFactor={-0.03} />
 
       <div className="relative z-10 mx-auto max-w-[1600px] px-8 lg:px-16">

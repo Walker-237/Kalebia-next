@@ -225,7 +225,7 @@ function SkillColumn({
 
 export default function Expertise() {
   return (
-    <section className="relative overflow-hidden py-24 lg:py-40 px-8 lg:px-16 bg-[var(--bg)]">
+    <section id="expertise" className="relative overflow-hidden py-24 lg:py-40 px-8 lg:px-16 bg-[var(--bg)]">
       <div className="relative max-w-[1600px] mx-auto">
         <Reveal>
           <SectionMarker index="03" label="EXPERTISE" />
