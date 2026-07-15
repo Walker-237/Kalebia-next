@@ -21,8 +21,6 @@ export interface RealisationItem {
   category: string;
   shortDescription: string;
   coverImage: string;
-  technologies: string[];
-  href: string | null;
 }
 
 function useReveal<T extends HTMLElement>() {
@@ -46,19 +44,6 @@ function useReveal<T extends HTMLElement>() {
   }, []);
 
   return { ref, inView };
-}
-
-function ProjectLink({ href }: { href: string | null }) {
-  if (!href) return null;
-  return (
-    <a className="re-link" href={href} target="_blank" rel="noopener noreferrer">
-      <span className="re-link-label">Voir le projet</span>
-      <span className="re-link-arrow" aria-hidden="true">
-        →
-      </span>
-      <span className="re-link-line" aria-hidden="true" />
-    </a>
-  );
 }
 
 export function RealisationsView({ items }: { items: RealisationItem[] }) {
@@ -90,14 +75,6 @@ export function RealisationsView({ items }: { items: RealisationItem[] }) {
           <span className="re-meta">{featured.category}</span>
           <h3 className="re-featured-title">{featured.title}</h3>
           <p className="re-excerpt">{featured.shortDescription}</p>
-          {featured.technologies.length > 0 && (
-            <ul className="re-tags">
-              {featured.technologies.map((t) => (
-                <li key={t}>{t}</li>
-              ))}
-            </ul>
-          )}
-          <ProjectLink href={featured.href} />
         </div>
       </div>
 
@@ -115,7 +92,6 @@ export function RealisationsView({ items }: { items: RealisationItem[] }) {
               <span className="re-meta">{item.category}</span>
               <h3 className="re-card-title">{item.title}</h3>
               <p className="re-excerpt">{item.shortDescription}</p>
-              <ProjectLink href={item.href} />
             </article>
           ))}
         </div>
@@ -255,24 +231,6 @@ export function RealisationsView({ items }: { items: RealisationItem[] }) {
           margin: 0 0 1.25rem;
         }
 
-        .re-tags {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-          list-style: none;
-          margin: 0 0 1.5rem;
-          padding: 0;
-        }
-
-        .re-tags li {
-          font-family: "Inter", sans-serif;
-          font-size: 12px;
-          color: rgba(17, 17, 20, 0.5);
-          border: 1px solid rgba(17, 17, 20, 0.12);
-          border-radius: 999px;
-          padding: 0.25rem 0.7rem;
-        }
-
         /* ---------- secondary grid ---------- */
         .re-grid {
           display: grid;
@@ -330,43 +288,6 @@ export function RealisationsView({ items }: { items: RealisationItem[] }) {
           line-height: 1.24;
           letter-spacing: -0.005em;
           margin: 0 0 0.75rem;
-        }
-
-        /* ---------- link ---------- */
-        .re-link {
-          position: relative;
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-family: "Inter", sans-serif;
-          font-size: 14px;
-          font-weight: 500;
-          color: var(--ink);
-          text-decoration: none;
-        }
-
-        .re-link-arrow {
-          transition: transform 420ms var(--ease);
-        }
-
-        .re-link:hover .re-link-arrow {
-          transform: translateX(4px);
-        }
-
-        .re-link-line {
-          position: absolute;
-          left: 0;
-          bottom: -4px;
-          width: 100%;
-          height: 1px;
-          background: var(--accent);
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 420ms var(--ease);
-        }
-
-        .re-link:hover .re-link-line {
-          transform: scaleX(1);
         }
 
         @media (prefers-reduced-motion: reduce) {

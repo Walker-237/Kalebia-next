@@ -27,8 +27,6 @@ interface FormState {
   longDescription: string;
   client: string;
   category: string;
-  technologies: string;
-  projectUrl: string;
   completionDate: string;
   featured: boolean;
   published: boolean;
@@ -41,8 +39,6 @@ const EMPTY_FORM: FormState = {
   longDescription: "",
   client: "",
   category: "",
-  technologies: "",
-  projectUrl: "",
   completionDate: "",
   featured: false,
   published: true,
@@ -57,8 +53,6 @@ function toFormState(item: Realisation | null): FormState {
     longDescription: item.longDescription,
     client: item.client ?? "",
     category: item.category,
-    technologies: item.technologies.join(", "),
-    projectUrl: item.projectUrl ?? "",
     completionDate: item.completionDate ? item.completionDate.slice(0, 10) : "",
     featured: item.featured,
     published: item.published,
@@ -119,10 +113,6 @@ export function RealisationFormDialog({
       fd.append("longDescription", form.longDescription);
       if (form.client.trim()) fd.append("client", form.client.trim());
       fd.append("category", form.category);
-      for (const tech of form.technologies.split(",").map((t) => t.trim()).filter(Boolean)) {
-        fd.append("technologies", tech);
-      }
-      if (form.projectUrl.trim()) fd.append("projectUrl", form.projectUrl.trim());
       if (form.completionDate) fd.append("completionDate", form.completionDate);
       fd.append("featured", String(form.featured));
       fd.append("published", String(form.published));
@@ -212,21 +202,6 @@ export function RealisationFormDialog({
               <Label htmlFor="category">Catégorie *</Label>
               <Input id="category" required value={form.category} onChange={(e) => set("category", e.target.value)} />
             </div>
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="technologies">Technologies (séparées par des virgules)</Label>
-            <Input
-              id="technologies"
-              placeholder="Figma, Illustrator, Notion"
-              value={form.technologies}
-              onChange={(e) => set("technologies", e.target.value)}
-            />
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="projectUrl">Lien du projet</Label>
-            <Input id="projectUrl" type="url" value={form.projectUrl} onChange={(e) => set("projectUrl", e.target.value)} />
           </div>
 
           <div className="flex flex-col gap-1.5">

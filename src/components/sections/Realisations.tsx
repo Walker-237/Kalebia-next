@@ -23,8 +23,6 @@ export default async function Realisations() {
     category: r.category,
     shortDescription: r.shortDescription,
     coverImage: r.coverImage,
-    technologies: r.technologies,
-    href: r.projectUrl || null,
   }));
 
   return <RealisationsView items={items} />;

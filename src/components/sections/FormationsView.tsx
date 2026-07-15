@@ -340,7 +340,7 @@ export function FormationsView({ courses }: { courses: Course[] }) {
         .fm-modal-meta {
           font-family: "Inter", sans-serif;
           font-size: 13px;
-          color: var(--accent);
+          color: #8A6A1E;
         }
 
         .fm-modal-desc {
@@ -359,17 +359,17 @@ export function FormationsView({ courses }: { courses: Course[] }) {
           font-family: "Inter", sans-serif;
           font-size: 0.9375rem;
           font-weight: 500;
-          color: var(--bg);
-          background: var(--ink);
+          color: #FAFAF7;
+          background: #111114;
           border: none;
           border-radius: 999px;
           padding: 0.85rem 1.75rem;
           cursor: pointer;
-          transition: background-color 300ms var(--ease);
+          transition: background-color 300ms cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .fm-modal-cta:hover {
-          background: var(--accent);
+          background: #C9A24B;
         }
 
         .fm-modal-cta:disabled {
@@ -392,11 +392,11 @@ export function FormationsView({ courses }: { courses: Course[] }) {
           border: 1px solid rgba(17, 17, 20, 0.15);
           outline: none;
           background: transparent;
-          color: var(--ink);
+          color: #111114;
         }
 
         .fm-modal-input:focus {
-          border-color: var(--accent);
+          border-color: #C9A24B;
         }
 
         .fm-modal-error {
@@ -410,7 +410,7 @@ export function FormationsView({ courses }: { courses: Course[] }) {
         .fm-modal-success {
           font-family: "Inter", sans-serif;
           font-size: 0.9375rem;
-          color: var(--accent);
+          color: #8A6A1E;
           margin: 0;
         }
 

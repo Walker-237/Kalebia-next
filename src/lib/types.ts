@@ -26,10 +26,8 @@ export interface Realisation {
   longDescription: string;
   client: string | null;
   category: string;
-  technologies: string[];
   coverImage: string;
   gallery: string[];
-  projectUrl: string | null;
   completionDate: string | null;
   featured: boolean;
   published: boolean;
