@@ -24,7 +24,7 @@ export default async function Realisations() {
     shortDescription: r.shortDescription,
     coverImage: r.coverImage,
     technologies: r.technologies,
-    href: r.projectUrl || r.githubUrl || null,
+    href: r.projectUrl || null,
   }));
 
   return <RealisationsView items={items} />;

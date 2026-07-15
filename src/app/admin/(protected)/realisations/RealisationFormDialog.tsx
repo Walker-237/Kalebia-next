@@ -29,7 +29,6 @@ interface FormState {
   category: string;
   technologies: string;
   projectUrl: string;
-  githubUrl: string;
   completionDate: string;
   featured: boolean;
   published: boolean;
@@ -44,7 +43,6 @@ const EMPTY_FORM: FormState = {
   category: "",
   technologies: "",
   projectUrl: "",
-  githubUrl: "",
   completionDate: "",
   featured: false,
   published: true,
@@ -61,7 +59,6 @@ function toFormState(item: Realisation | null): FormState {
     category: item.category,
     technologies: item.technologies.join(", "),
     projectUrl: item.projectUrl ?? "",
-    githubUrl: item.githubUrl ?? "",
     completionDate: item.completionDate ? item.completionDate.slice(0, 10) : "",
     featured: item.featured,
     published: item.published,
@@ -126,7 +123,6 @@ export function RealisationFormDialog({
         fd.append("technologies", tech);
       }
       if (form.projectUrl.trim()) fd.append("projectUrl", form.projectUrl.trim());
-      if (form.githubUrl.trim()) fd.append("githubUrl", form.githubUrl.trim());
       if (form.completionDate) fd.append("completionDate", form.completionDate);
       fd.append("featured", String(form.featured));
       fd.append("published", String(form.published));
@@ -228,15 +224,9 @@ export function RealisationFormDialog({
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col gap-1.5">
-              <Label htmlFor="projectUrl">Lien du projet</Label>
-              <Input id="projectUrl" type="url" value={form.projectUrl} onChange={(e) => set("projectUrl", e.target.value)} />
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <Label htmlFor="githubUrl">Lien GitHub</Label>
-              <Input id="githubUrl" type="url" value={form.githubUrl} onChange={(e) => set("githubUrl", e.target.value)} />
-            </div>
+          <div className="flex flex-col gap-1.5">
+            <Label htmlFor="projectUrl">Lien du projet</Label>
+            <Input id="projectUrl" type="url" value={form.projectUrl} onChange={(e) => set("projectUrl", e.target.value)} />
           </div>
 
           <div className="flex flex-col gap-1.5">

@@ -23,19 +23,17 @@ import { SOCIAL_PLATFORMS, resolveSocialPlatform } from "@/lib/socialPlatforms";
 interface FormState {
   platform: string;
   url: string;
-  icon: string;
   active: boolean;
   order: string;
 }
 
-const EMPTY_FORM: FormState = { platform: "", url: "", icon: "", active: true, order: "0" };
+const EMPTY_FORM: FormState = { platform: "", url: "", active: true, order: "0" };
 
 function toFormState(item: SocialLink | null): FormState {
   if (!item) return EMPTY_FORM;
   return {
     platform: item.platform,
     url: item.url,
-    icon: item.icon ?? "",
     active: item.active,
     order: String(item.order),
   };
@@ -89,7 +87,6 @@ export function SocialLinkFormDialog({
       if (item) {
         const body = {
           url: form.url,
-          icon: form.icon.trim() || undefined,
           active: form.active,
           order: Number(form.order) || 0,
         };
@@ -98,7 +95,6 @@ export function SocialLinkFormDialog({
         const body = {
           platform: form.platform,
           url: form.url,
-          icon: form.icon.trim() || undefined,
           active: form.active,
           order: Number(form.order) || 0,
         };
@@ -156,11 +152,6 @@ export function SocialLinkFormDialog({
               value={form.url}
               onChange={(e) => set("url", e.target.value)}
             />
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="icon">Icône (optionnel)</Label>
-            <Input id="icon" value={form.icon} onChange={(e) => set("icon", e.target.value)} />
           </div>
 
           <div className="flex flex-col gap-1.5">

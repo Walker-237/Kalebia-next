@@ -6,10 +6,12 @@ async function getCourses(): Promise<Course[]> {
   try {
     const formations = await apiRequest<Formation[]>("/formations", { cache: "no-store" });
     return formations.map((f) => ({
-      slug: f.id,
+      id: f.id,
       title: f.title,
-      desc: f.description,
-      href: "#contact",
+      description: f.description,
+      image: f.image,
+      duration: f.duration,
+      price: f.price,
     }));
   } catch {
     return [];

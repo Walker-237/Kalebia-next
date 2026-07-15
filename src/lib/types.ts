@@ -30,7 +30,6 @@ export interface Realisation {
   coverImage: string;
   gallery: string[];
   projectUrl: string | null;
-  githubUrl: string | null;
   completionDate: string | null;
   featured: boolean;
   published: boolean;
@@ -65,7 +64,6 @@ export interface SocialLink {
   id: string;
   platform: string;
   url: string;
-  icon: string | null;
   active: boolean;
   order: number;
   createdAt: string;
