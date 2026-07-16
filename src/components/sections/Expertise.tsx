@@ -285,14 +285,6 @@ export default function Expertise() {
             </div>
           </div>
         </div>
-
-        <Reveal delay={200}>
-          <div className="mt-10 lg:mt-16 flex justify-start">
-            <EditorialLink href="#realisations">
-              Voir les réalisations
-            </EditorialLink>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

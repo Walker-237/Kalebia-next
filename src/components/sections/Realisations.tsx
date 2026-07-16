@@ -23,6 +23,12 @@ export default async function Realisations() {
     category: r.category,
     shortDescription: r.shortDescription,
     coverImage: r.coverImage,
+    // NOTE: `metric` isn't on the current `Realisation` type — add
+    // `metric: { value: string; label: string }` to it and to the API
+    // response. Falling back to a placeholder here so this compiles,
+    // but every project should have a real number: reach %, budget
+    // managed, campaign count, whatever anchors that chapter.
+    metric: r.metric ?? { value: "—", label: "métrique à renseigner" },
   }));
 
   return <RealisationsView items={items} />;
