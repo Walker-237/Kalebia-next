@@ -116,7 +116,7 @@ export function TestimonialFormDialog({
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="name">Nom *</Label>
               <Input id="name" required value={form.name} onChange={(e) => set("name", e.target.value)} />
@@ -135,7 +135,7 @@ export function TestimonialFormDialog({
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="flex flex-col gap-1.5">
               <Label htmlFor="role">Poste</Label>
               <Input id="role" value={form.role} onChange={(e) => set("role", e.target.value)} />

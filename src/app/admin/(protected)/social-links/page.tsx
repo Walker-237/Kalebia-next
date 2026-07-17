@@ -64,12 +64,12 @@ export default function AdminSocialLinksPage() {
 
   return (
     <div>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="font-[Fraunces] text-2xl text-[#111114]">Réseaux sociaux</h1>
           <p className="mt-1 text-sm text-[#111114]/50">Gérez les liens affichés sur le site.</p>
         </div>
-        <Button onClick={openCreate} disabled={allPlatformsConfigured}>
+        <Button onClick={openCreate} disabled={allPlatformsConfigured} className="self-start sm:self-auto">
           <PlusIcon className="size-4" />
           {allPlatformsConfigured ? "Tous les réseaux sont configurés" : "Nouveau lien"}
         </Button>
