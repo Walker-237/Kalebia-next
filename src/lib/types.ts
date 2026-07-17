@@ -30,6 +30,7 @@ export interface Realisation {
   gallery: string[];
   completionDate: string | null;
   featured: boolean;
+  metric?: { value: string; label: string };
   published: boolean;
   createdAt: string;
   updatedAt: string;
